@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #0B0B0D;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+textarea, input, button {
+  font-family: inherit;
+}
+
+@keyframes screenEnter {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.screen-enter { animation: screenEnter 380ms cubic-bezier(0.16,1,0.3,1) both; }
+
+@keyframes flashPulse {
+  0% { opacity: 0; }
+  35% { opacity: 0.9; }
+  100% { opacity: 0; }
+}
+.bottom-flash { animation: flashPulse 900ms ease-out forwards; }
+
+@keyframes popIn {
+  0% { transform: scale(0.82); opacity: 0; }
+  65% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.pop-in { animation: popIn 300ms cubic-bezier(0.34,1.56,0.64,1); }
+
+.pop-btn { transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
+.pop-btn:active { transform: scale(0.91); }
+
+@keyframes logoAppear {
+  0% { opacity: 0; transform: scale(0.85); box-shadow: 0 0 0px rgba(255,255,255,0); }
+  45% { opacity: 1; transform: scale(1.04); box-shadow: 0 0 46px rgba(255,255,255,0.4); }
+  100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0px rgba(255,255,255,0); }
+}
+.logo-glow-in {
+  border-radius: 14px;
+  animation: logoAppear 1000ms cubic-bezier(0.16,1,0.3,1) both;
+}
